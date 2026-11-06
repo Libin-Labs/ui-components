@@ -1,0 +1,124 @@
+{
+  "name": "@lp-labs/ui-components",
+  "version": "1.0.0",
+  "description": "A comprehensive hybrid UI component library with utilities and theming support. Includes pre-built components and customizable utilities.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    },
+    "./components": {
+      "import": {
+        "types": "./dist/esm/components/index.d.ts",
+        "default": "./dist/esm/components/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/components/index.d.ts",
+        "default": "./dist/cjs/components/index.js"
+      }
+    },
+    "./utilities": {
+      "import": {
+        "types": "./dist/esm/utilities/index.d.ts",
+        "default": "./dist/esm/utilities/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utilities/index.d.ts",
+        "default": "./dist/cjs/utilities/index.js"
+      }
+    },
+    "./theme": {
+      "import": {
+        "types": "./dist/esm/theme/index.d.ts",
+        "default": "./dist/esm/theme/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/theme/index.d.ts",
+        "default": "./dist/cjs/theme/index.js"
+      }
+    },
+    "./styles": "./dist/styles/main.css",
+    "./styles.scss": "./src/styles/main.scss",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/styles",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "peerDependenciesOptional": {
+    "react": true
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "prettier": "^3.6.2",
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:watch": "node scripts/build.mjs --watch",
+    "typecheck": "npm run build && node scripts/check-types.mjs",
+    "test": "npm run build && node --test tests/**/*.test.mjs",
+    "test:watch": "npm run build && node --test --watch tests/**/*.test.mjs",
+    "lint": "prettier --check src scripts tests *.json README.md",
+    "format": "prettier --write src scripts tests *.json README.md",
+    "prepack": "npm run build"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "endOfLine": "lf"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": {
+    "name": "Libin Prasanth",
+    "url": "https://www.linkedin.com/in/libinprasanth/"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "react",
+    "library",
+    "design-system",
+    "utilities",
+    "theme",
+    "hybrid"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lp-labs/flow"
+  },
+  "funding": {
+    "type": "paypal",
+    "url": "https://www.paypal.me/LibinPrasanth"
+  }
+}
